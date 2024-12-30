@@ -1,32 +1,36 @@
-import java.util.Scanner;
+import java.util.*;
 
-public class SimplePalindrome {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        // Input the string
-        System.out.print("Enter a string: ");
-        String input = scanner.nextLine();
-
-        // Check if the string is a palindrome
-        if (isPalindrome(input)) {
+public class Solution 
+{
+    public static void main(String[] args) 
+    {
+        
+        Scanner sc=new Scanner(System.in);
+        String A=sc.next();
+        /* Enter your code here. Print output to STDOUT. */
+        if(palidrome(A))
+        {
             System.out.println("Yes");
-        } else {
+        }
+        else
+        {
             System.out.println("No");
         }
-
-        scanner.close();
+        sc.close();
     }
 
-    public static boolean isPalindrome(String str) {
+    public static boolean palidrome (String str)
+    {
         int n = str.length();
-
-        // Compare characters from the start and end
-        for (int i = 0; i < n / 2; i++) {
-            if (str.charAt(i) != str.charAt(n - i - 1)) {
-                return false; // Not a palindrome
+        for(int i=0 ;i< n/2; i++)
+        {
+            if(str.charAt(i) != str.charAt(n-i-1))
+            {
+                return false;
             }
+            
         }
-        return true; // Is a palindrome
+        return true;
     }
+    
 }
