@@ -1,0 +1,50 @@
+import java.io.*;
+import java.math.*;
+import java.util.*;
+import static java.util.stream.Collectors.toList;
+import java.math.BigInteger;
+
+public class JavaPrimalityTest {
+    public static void main(String[] args) {
+        // Reading input
+        Scanner sc= new Scanner(System.in);
+        String in= sc.nextLine();
+        BigInteger n = new BigInteger(in);
+         if (n.isProbablePrime(1)) {
+            System.out.println("prime");
+        } else {
+            System.out.println("not prime");
+        }
+        
+        sc.close();  // Close the scanner
+    }
+}
+
+------------
+
+import java.util.Scanner;
+
+public class JavaPrimalityTest {
+    public static void main(String[] args) {
+        // Reading input
+        Scanner sc = new Scanner(System.in);
+        long n = sc.nextLong();  // Read the input number
+        
+        // Multiply by the given numbers and check the remainder
+        long[] multipliers = {2,3,4,5,6,7,8,9, 10, 11, 12, 13};
+        
+        for (long multiplier : multipliers) {
+            if (n % multiplier == 0) {
+                // If remainder is 0, it's divisible, so it's not prime
+                System.out.println("not prime");
+                sc.close();
+                return; // Exit the method early if divisible
+            }
+        }
+        
+        // If no divisor is found, the number is prime
+        System.out.println("prime");
+        
+        sc.close();  // Close the scanner
+    }
+}
